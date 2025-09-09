@@ -27,7 +27,9 @@ function verificarIntento() {
           document.getElementById('reiniciar').removeAttribute('disabled');
      } else {
           limpiarCaja();
-          if (numeroUsuario > numeroSecreto) {
+          if (numeroUsuario < 1 || numeroUsuario > 10) {
+               asignarTexteElemento('p', 'Número no válido');
+          } else if (numeroUsuario > numeroSecreto) {
                asignarTexteElemento('p', 'El número secreto es menor');
           } else {
                asignarTexteElemento('p', 'El número secreto es mayor');
